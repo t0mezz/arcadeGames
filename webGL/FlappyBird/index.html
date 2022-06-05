@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <img src="https://steamuserimages-a.akamaihd.net/ugc/31852200316364811/254B6A77B6FEFE63BFF152B80B198321A6D938CD/?imw=1024&imh=576&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600></canvas>
     <div id="unity-loading-bar">
@@ -22,10 +23,6 @@
   </div>
   </div>
   <script>
-    document.addEventListener("load", function () {
-      unityInstance.SetFullscreen(1);
-    });
-
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
@@ -109,6 +106,7 @@
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         loadingBar.style.display = "none";
+        unityInstance.SetFullscreen(1);
       }).catch((message) => {
         alert(message);
       });
